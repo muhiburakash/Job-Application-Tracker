@@ -29,9 +29,31 @@
 
 </head>
 
-<body>
-  <h2 class="text-5xl text-center">hello</h2>
+<body class="bg-gray-100 min-h-screen">
 
+  <!-- Header -->
+  <header class="container mx-auto pt-[60px] pb-[20px] px-5 ">
+    <h1 class="text-3xl font-bold">Job Application Tracker</h1>
+  </header>
+
+  <main class="container mx-auto px-5">
+
+    <!-- Dashboard -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="card bg-white p-4">
+        <p class="text-black">Total</p>
+        <p id="totalCount" class="text-2xl font-bold">0</p>
+      </div>
+      <div class="card bg-white  p-4">
+        <p class="text-black">Interview</p>
+        <p id="interviewCount" class="text-2xl font-bold text-green-600">0</p>
+      </div>
+      <div class="card bg-white p-4">
+        <p class="text-black">Rejected</p>
+        <p id="rejectedCount" class="text-2xl font-bold text-red-600">0</p>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
