@@ -29,7 +29,7 @@
 
 </head>
 
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-slate-100">
 
   <!-- Header -->
   <header class="container mx-auto pt-[60px] pb-[20px] px-5 ">
@@ -53,6 +53,163 @@
         <p id="rejectedCount" class="text-2xl font-bold text-red-600">0</p>
       </div>
     </section>
+
+    <!-- Jobs Section -->
+    <section class="my-10">
+      <div class="flex justify-between py-5 ">
+        <h2 class="text-xl font-semibold">Available Jobs</h2>
+        <p id="tabCount" class="text-[16px] text-gray-500">0 jobs</p>
+      </div>
+      <!-- tab buttons -->
+      <div class="flex gap-4 mb-6">
+        <button id="allBtn" class="px-4 py-2 bg-blue-600 text-white rounded">All</button>
+        <button id="interviewBtn" class="px-4 py-2 bg-gray-300 rounded">Interview</button>
+        <button id="rejectedBtn" class="px-4 py-2 bg-gray-300 rounded">Rejected</button>
+      </div>
+      <!-- Job post -->
+      <section id="alljobs" class="space-y-6 mb-10">
+        <!-- job post 01 -->
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+          <h2 class="company text-3xl font-bold">PixelCraft Studio</h2>
+          <p class="job-title font-medium text-xl">UI/UX Designer</p>
+          <p class="details text-gray-700">New York, NY • Full-time • $70,000 - $95,000</p>
+          <p class="status btn w-[120px]">Not Applied</p>
+          <p class="job-drescription text-gray-700">Design intuitive user experiences for SaaS products. Must have
+            strong Figma skills
+            and a solid design
+            portfolio.</p>
+          <div class="mt-4 flex gap-3">
+            <button class="interview-btn btn border border-green-600 text-green-600 ">Interview</button>
+            <button class="reject-btn btn border border-red-600 text-red-600 ">Rejected</button>
+          </div>
+          <div class="absolute top-5 right-5">
+            <button class="btn delete-btn h-[50px] w-[50px] rounded-full "><i
+                class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        <!-- job post 02 -->
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+          <h2 class="company text-3xl font-bold">CodeNest Solutions</h2>
+          <p class="job-title font-medium text-xl">Frontend Developer (React)</p>
+          <p class="details text-gray-700">San Francisco, CA • Remote • $90,000 - $130,000</p>
+          <p class="status btn w-[120px]">Not Applied</p>
+          <p class="job-drescription text-gray-700">Build scalable web applications using React and modern JavaScript
+            frameworks. Experience with APIs required.</p>
+          <div class="mt-4 flex gap-3">
+            <button class="interview-btn btn border border-green-600 text-green-600 ">Interview</button>
+            <button class="reject-btn btn border border-red-600 text-red-600 ">Rejected</button>
+          </div>
+          <div class="absolute top-5 right-5">
+            <button class="btn delete-btn h-[50px] w-[50px] rounded-full "><i
+                class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        <!-- job post 03 -->
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+          <h2 class="company text-3xl font-bold">BrightPath Digital</h2>
+          <p class="job-title font-medium text-xl">Digital Marketing Specialist</p>
+          <p class="details text-gray-700">Chicago, IL • Full-time • $60,000 - $85,000</p>
+          <p class="status btn w-[120px]">Not Applied</p>
+          <p class="job-drescription text-gray-700">Plan and execute SEO, SEM, and social media campaigns. Must have 2+
+            years of performance marketing experience.</p>
+          <div class="mt-4 flex gap-3">
+            <button class="interview-btn btn border border-green-600 text-green-600 ">Interview</button>
+            <button class="reject-btn btn border border-red-600 text-red-600 ">Rejected</button>
+          </div>
+          <div class="absolute top-5 right-5">
+            <button class="btn delete-btn h-[50px] w-[50px] rounded-full "><i
+                class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        <!-- job post 04 -->
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+          <h2 class="company text-3xl font-bold">NovaTech Agency</h2>
+          <p class="job-title font-medium text-xl">WordPress Developer</p>
+          <p class="details text-gray-700">Austin, TX • Contract • $50,000 - $75,000</p>
+          <p class="status btn w-[120px]">Not Applied</p>
+          <p class="job-drescription text-gray-700">Develop and customize WordPress themes and plugins. Strong PHP and
+            Elementor experience required.</p>
+          <div class="mt-4 flex gap-3">
+            <button class="interview-btn btn border border-green-600 text-green-600 ">Interview</button>
+            <button class="reject-btn btn border border-red-600 text-red-600 ">Rejected</button>
+          </div>
+          <div class="absolute top-5 right-5">
+            <button class="btn delete-btn h-[50px] w-[50px] rounded-full "><i
+                class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        <!-- job post 05 -->
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+          <h2 class="company text-3xl font-bold">Elevate Labs</h2>
+          <p class="job-title font-medium text-xl">Product Designer</p>
+          <p class="details text-gray-700">Seattle, WA • Full-time • $85,000 - $110,000</p>
+          <p class="status btn w-[120px]">Not Applied</p>
+          <p class="job-drescription text-gray-700">Collaborate with product teams to design user-centric mobile and web
+            applications.</p>
+          <div class="mt-4 flex gap-3">
+            <button class="interview-btn btn border border-green-600 text-green-600 ">Interview</button>
+            <button class="reject-btn btn border border-red-600 text-red-600 ">Rejected</button>
+          </div>
+          <div class="absolute top-5 right-5">
+            <button class="btn delete-btn h-[50px] w-[50px] rounded-full "><i
+                class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        <!-- job post 06 -->
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+          <h2 class="company text-3xl font-bold">SkyBridge Systems</h2>
+          <p class="job-title font-medium text-xl">Backend Developer (Node.js)</p>
+          <p class="details text-gray-700">Boston, MA • Hybrid • $95,000 - $125,000</p>
+          <p class="status btn w-[120px]">Not Applied</p>
+          <p class="job-drescription text-gray-700">Develop REST APIs and scalable backend systems. Experience with
+            MongoDB and AWS preferred.</p>
+          <div class="mt-4 flex gap-3">
+            <button class="interview-btn btn border border-green-600 text-green-600 ">Interview</button>
+            <button class="reject-btn btn border border-red-600 text-red-600 ">Rejected</button>
+          </div>
+          <div class="absolute top-5 right-5">
+            <button class="btn delete-btn h-[50px] w-[50px] rounded-full "><i
+                class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        <!-- job post 07 -->
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+          <h2 class="company text-3xl font-bold">Creative Hive</h2>
+          <p class="job-title font-medium text-xl">Brand Identity Designer</p>
+          <p class="details text-gray-700">Los Angeles, CA • Part-time • $55,000 - $80,000</p>
+          <p class="status btn w-[120px]">Not Applied</p>
+          <p class="job-drescription text-gray-700">Create visual identities for startups and growing brands. Strong
+            typography and branding portfolio required.</p>
+          <div class="mt-4 flex gap-3">
+            <button class="interview-btn btn border border-green-600 text-green-600 ">Interview</button>
+            <button class="reject-btn btn border border-red-600 text-red-600 ">Rejected</button>
+          </div>
+          <div class="absolute top-5 right-5">
+            <button class="btn delete-btn h-[50px] w-[50px] rounded-full "><i
+                class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+        <!-- job post 08 -->
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+          <h2 class="company text-3xl font-bold">DataCore Analytics</h2>
+          <p class="job-title font-medium text-xl">Data Analyst</p>
+          <p class="details text-gray-700">Denver, CO • Full-time • $75,000 - $100,000</p>
+          <p class="status btn w-[120px]">Not Applied</p>
+          <p class="job-drescription text-gray-700">Analyze datasets and generate actionable insights. Proficiency in
+            SQL, Excel, and Power BI required.</p>
+          <div class="mt-4 flex gap-3">
+            <button class="interview-btn btn border border-green-600 text-green-600 ">Interview</button>
+            <button class="reject-btn btn border border-red-600 text-red-600 ">Rejected</button>
+          </div>
+          <div class="absolute top-5 right-5">
+            <button class="btn delete-btn h-[50px] w-[50px] rounded-full "><i
+                class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+
+      </section>
+    </section>
+
   </main>
 
   <script src="script.js"></script>
