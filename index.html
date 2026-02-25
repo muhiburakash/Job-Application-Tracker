@@ -22,14 +22,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    * {
+    body {
       font-family: "Geist", sans-serif;
     }
   </style>
 
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-slate-100 h-auto mb-20">
 
   <!-- Header -->
   <header class="container mx-auto pt-[60px] pb-[20px] px-5 ">
@@ -69,8 +69,11 @@
         <button onclick="toggleStyle('rejectedBtn')" id="rejectedBtn"
           class="px-4 py-2 bg-gray-300 rounded">Rejected</button>
       </div>
+      <section id="filter-section" class="hidden">
+
+      </section>
       <!-- Job post -->
-      <section id="alljobPosts" class="space-y-6 mb-10">
+      <section id="allJobPosts" class="space-y-6 mb-10">
         <!-- job post 01 -->
         <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
           <h2 class="company text-3xl font-bold">PixelCraft Studio</h2>
