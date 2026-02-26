@@ -29,17 +29,17 @@
 
 </head>
 
-<body class="bg-slate-100 h-auto mb-20">
+<body class="bg-slate-100 w-full h-full py-5">
 
   <!-- Header -->
-  <header class="container mx-auto pt-[60px] pb-[20px] px-5 ">
+  <header class="container mx-auto pt-10 px-5 ">
     <h1 class="text-3xl font-bold">Job Application Tracker</h1>
   </header>
 
   <main class="container mx-auto px-5">
 
     <!-- Dashboard -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-5">
       <div class="card bg-white p-4">
         <p class="text-black">Total</p>
         <p id="totalCount" class="text-2xl font-bold">0</p>
@@ -73,7 +73,7 @@
           class="px-4 py-2 bg-gray-300 rounded">Rejected</button>
       </div>
       <!-- filter tab content -->
-      <section id="filter-section" class="hidden space-y-6 mb-10">
+      <section id="filter-section" class="hidden space-y-6">
 
       </section>
       <!-- Empty State -->
@@ -85,9 +85,9 @@
         <p class="text-gray-500">Try switching tabs</p>
       </section>
       <!-- Job post -->
-      <section id="allJobPosts" class="space-y-6 mb-10">
+      <section id="allJobPosts" class="space-y-6">
         <!-- job post 01 -->
-        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg ">
           <h2 class="company text-3xl font-bold">PixelCraft Studio</h2>
           <p class="job-title font-medium text-xl">UI/UX Designer</p>
           <p class="details text-gray-700">New York, NY • Full-time • $70,000 - $95,000</p>
@@ -106,7 +106,7 @@
           </div>
         </div>
         <!-- job post 02 -->
-        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg">
           <h2 class="company text-3xl font-bold">CodeNest Solutions</h2>
           <p class="job-title font-medium text-xl">Frontend Developer (React)</p>
           <p class="details text-gray-700">San Francisco, CA • Remote • $90,000 - $130,000</p>
@@ -123,7 +123,7 @@
           </div>
         </div>
         <!-- job post 03 -->
-        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg">
           <h2 class="company text-3xl font-bold">BrightPath Digital</h2>
           <p class="job-title font-medium text-xl">Digital Marketing Specialist</p>
           <p class="details text-gray-700">Chicago, IL • Full-time • $60,000 - $85,000</p>
@@ -140,7 +140,7 @@
           </div>
         </div>
         <!-- job post 04 -->
-        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg">
           <h2 class="company text-3xl font-bold">NovaTech Agency</h2>
           <p class="job-title font-medium text-xl">WordPress Developer</p>
           <p class="details text-gray-700">Austin, TX • Contract • $50,000 - $75,000</p>
@@ -157,7 +157,7 @@
           </div>
         </div>
         <!-- job post 05 -->
-        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg">
           <h2 class="company text-3xl font-bold">Elevate Labs</h2>
           <p class="job-title font-medium text-xl">Product Designer</p>
           <p class="details text-gray-700">Seattle, WA • Full-time • $85,000 - $110,000</p>
@@ -174,7 +174,7 @@
           </div>
         </div>
         <!-- job post 06 -->
-        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg">
           <h2 class="company text-3xl font-bold">SkyBridge Systems</h2>
           <p class="job-title font-medium text-xl">Backend Developer (Node.js)</p>
           <p class="details text-gray-700">Boston, MA • Hybrid • $95,000 - $125,000</p>
@@ -191,7 +191,7 @@
           </div>
         </div>
         <!-- job post 07 -->
-        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg">
           <h2 class="company text-3xl font-bold">Creative Hive</h2>
           <p class="job-title font-medium text-xl">Brand Identity Designer</p>
           <p class="details text-gray-700">Los Angeles, CA • Part-time • $55,000 - $80,000</p>
@@ -208,7 +208,7 @@
           </div>
         </div>
         <!-- job post 08 -->
-        <div class="job-post p-8 bg-white rounded-md space-y-2 relative">
+        <div class="job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg">
           <h2 class="company text-3xl font-bold">DataCore Analytics</h2>
           <p class="job-title font-medium text-xl">Data Analyst</p>
           <p class="details text-gray-700">Denver, CO • Full-time • $75,000 - $100,000</p>
@@ -228,7 +228,6 @@
       </section>
     </section>
   </main>
-
   <script src="script.js"></script>
 </body>
 
