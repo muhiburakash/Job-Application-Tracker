@@ -19,35 +19,37 @@ const filterSection = document.getElementById('filter-section');
 const emptyState = document.getElementById('emptyState');
 const mainContainer = document.querySelector('main');
 
-//count
+// count
 function calculateTotal() {
   total.innerText = allJobPost.children.length;
   interview.innerText = interviewList.length;
   rejected.innerText = rejectedList.length;
 
   if (currentStatus === 'interviewBtn') {
-    tabCount.innerText = `${interviewList.length}`;
+    tabCount.innerText = interviewList.length;
   } else if (currentStatus === 'rejectedBtn') {
-    tabCount.innerText = `${rejectedList.length} `;
+    tabCount.innerText = rejectedList.length;
   } else {
-    tabCount.innerText = `${allJobPost.children.length} `;
+    tabCount.innerText = allJobPost.children.length;
   }
 }
-calculateTotal();
 
-//Empty content
-
+// show/hide empty state
 function toggleEmptyState(length) {
   if (length === 0) {
-    emptyState.classList.remove('hidden');
-    filterSection.classList.add('hidden');
+    emptyState.classList.remove('hidden'); // show empty
+    filterSection.classList.add('hidden'); // hide jobs list
+    allJobPost.classList.add('hidden'); // hide all jobs if on "all"
   } else {
-    emptyState.classList.add('hidden');
-    filterSection.classList.remove('hidden');
+    emptyState.classList.add('hidden'); // hide empty
+    filterSection.classList.remove('hidden'); // show filtered jobs
+    if (currentStatus === 'allBtn') allJobPost.classList.remove('hidden');
   }
 }
 
-//Tab Switch
+calculateTotal();
+
+// Tab Switch
 function toggleStyle(id) {
   [allBtn, interviewBtn, rejectedBtn].forEach(btn => {
     btn.classList.remove('bg-blue-500', 'text-white');
@@ -63,7 +65,7 @@ function toggleStyle(id) {
   if (id === 'allBtn') {
     allJobPost.classList.remove('hidden');
     filterSection.classList.add('hidden');
-    emptyState.classList.add('hidden');
+    toggleEmptyState(allJobPost.children.length);
   }
 
   if (id === 'interviewBtn') {
@@ -81,7 +83,7 @@ function toggleStyle(id) {
   calculateTotal();
 }
 
-//click handler
+// click handler
 mainContainer.addEventListener('click', function (event) {
 
   // INTERVIEW
@@ -105,6 +107,7 @@ mainContainer.addEventListener('click', function (event) {
     post.querySelector('.status').innerText = 'Interview';
 
     if (currentStatus === 'interviewBtn') renderInterview();
+    toggleEmptyState(interviewList.length);
     calculateTotal();
   }
 
@@ -129,10 +132,10 @@ mainContainer.addEventListener('click', function (event) {
     post.querySelector('.status').innerText = 'Rejected';
 
     if (currentStatus === 'rejectedBtn') renderRejected();
+    toggleEmptyState(rejectedList.length);
     calculateTotal();
   }
 
-  // DELETE
   // DELETE
   if (event.target.closest('.delete-btn')) {
     const post = event.target.closest('.job-post');
@@ -152,21 +155,28 @@ mainContainer.addEventListener('click', function (event) {
     if (currentStatus === 'interviewBtn') renderInterview();
     if (currentStatus === 'rejectedBtn') renderRejected();
 
+    // update empty state dynamically
+    let length =
+      currentStatus === 'interviewBtn'
+        ? interviewList.length
+        : currentStatus === 'rejectedBtn'
+          ? rejectedList.length
+          : allJobPost.children.length;
+
+    toggleEmptyState(length);
     calculateTotal();
-
-    // <-- ADD THIS LINE
-    if (allJobPost.children.length === 0) toggleEmptyState(0);
   }
+});
 
-  //rander interview
-  function renderInterview() {
-    filterSection.innerHTML = '';
-    toggleEmptyState(interviewList.length);
+// render interview
+function renderInterview() {
+  filterSection.innerHTML = '';
+  toggleEmptyState(interviewList.length);
 
-    interviewList.forEach(job => {
-      const div = document.createElement('div');
-      div.className = 'job-post p-8 bg-white rounded-md space-y-2 relative';
-      div.innerHTML = `
+  interviewList.forEach(job => {
+    const div = document.createElement('div');
+    div.className = 'job-post p-8 bg-white rounded-md space-y-2 relative';
+    div.innerHTML = `
       <h2 class="company text-3xl font-bold">${job.companyName}</h2>
       <p class="job-title text-xl">${job.jobTitle}</p>
       <p class="details text-gray-700">${job.details}</p>
@@ -184,19 +194,19 @@ mainContainer.addEventListener('click', function (event) {
         </button>
       </div>
     `;
-      filterSection.appendChild(div);
-    });
-  }
+    filterSection.appendChild(div);
+  });
+}
 
-  //rander rejcected
-  function renderRejected() {
-    filterSection.innerHTML = '';
-    toggleEmptyState(rejectedList.length);
+// render rejected
+function renderRejected() {
+  filterSection.innerHTML = '';
+  toggleEmptyState(rejectedList.length);
 
-    rejectedList.forEach(job => {
-      const div = document.createElement('div');
-      div.className = 'job-post p-8 bg-white rounded-md space-y-2 relative';
-      div.innerHTML = `
+  rejectedList.forEach(job => {
+    const div = document.createElement('div');
+    div.className = 'job-post p-8 bg-white rounded-md space-y-2 relative';
+    div.innerHTML = `
       <h2 class="company text-3xl font-bold">${job.companyName}</h2>
       <p class="job-title text-xl">${job.jobTitle}</p>
       <p class="details text-gray-700">${job.details}</p>
@@ -214,6 +224,6 @@ mainContainer.addEventListener('click', function (event) {
         </button>
       </div>
     `;
-      filterSection.appendChild(div);
-    });
-  }
+    filterSection.appendChild(div);
+  });
+}
