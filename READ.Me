@@ -1,0 +1,46 @@
+1.getElementById, getElementsByClassName, querySelector / querySelectorAll:
+   
+   getElementById → #id এটা দিয়ে একটা element দরা যায়ে, এটা খুব দ্রুত কাজ করে।
+   getElementsByClassName →.class একই নামের সব element দরে,live list, DOM Update হলে এটা চেঞ্জ হয়।
+   querySelector →'selector' CSS selector দিয়ে প্রথম element দরে ।
+   querySelectorAll →'selector' CSS selector দিয়ে সব matching element দরে,(static list) দেয়।DOM Update হলে এটা চেঞ্জ হয় না।
+
+2. নতুন element তৈরি ও DOM এ যোগ করাঃ
+
+  let div = document.createElement('div');//Create element:
+  div.textContent = "Hello";//Add content
+  div.className = "my-class";//Add attribute
+  document.body.appendChild(div); // body শেষে যোগ।
+
+3. Event Bubbling:
+
+   অর্থ: ইভেন্ট (যেমন click, keypress) child element থেকে শুরু করে ধাপে ধাপে parent এর দিকে উঠে যায়।
+   যখন একটি child element এ event ঘটে, তখন সেটার parent, grandparent, body, document সবের listener sequentially trigger হয় যদি না stopPropagation() use করা হয়।
+
+
+
+4. Event Delegation:
+
+  Parent এ listener দিয়ে সব child handle করা।
+  সুবিধা: memory কম লাগে, dynamic element কাজ করে।
+
+   parent.addEventListener('click', e => {
+    if(e.target.tagName === 'BUTTON') console.log('Button clicked');
+  });
+
+5.preventDefault() vs stopPropagation()
+
+   ● preventDefault()
+    
+     কাজ: browser এর default কাজ বন্ধ করে।
+     উদাহরণ: <a> click করলে page navigate করা বন্ধ, form submit না হওয়া।
+   
+   ●stopPropagation()
+    
+    কাজ: event bubbling (child → parent) বন্ধ করে।
+    উদাহরণ: click event parent element এ না পৌঁছায়।
+
+    link.addEventListener('click', e => {
+     e.preventDefault(); // default কাজ বন্ধ
+     e.stopPropagation(); // bubbling বন্ধ
+    });

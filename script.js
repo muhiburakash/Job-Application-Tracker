@@ -37,12 +37,12 @@ function calculateTotal() {
 // show/hide empty state
 function toggleEmptyState(length) {
   if (length === 0) {
-    emptyState.classList.remove('hidden'); // show empty
-    filterSection.classList.add('hidden'); // hide jobs list
-    allJobPost.classList.add('hidden'); // hide all jobs if on "all"
+    emptyState.classList.remove('hidden');
+    filterSection.classList.add('hidden');
+    allJobPost.classList.add('hidden');
   } else {
-    emptyState.classList.add('hidden'); // hide empty
-    filterSection.classList.remove('hidden'); // show filtered jobs
+    emptyState.classList.add('hidden');
+    filterSection.classList.remove('hidden');
     if (currentStatus === 'allBtn') allJobPost.classList.remove('hidden');
   }
 }
@@ -86,7 +86,7 @@ function toggleStyle(id) {
 // click handler
 mainContainer.addEventListener('click', function (event) {
 
-  // INTERVIEW
+  // Interview
   if (event.target.classList.contains('interview-btn')) {
     const post = event.target.closest('.job-post');
 
@@ -111,7 +111,7 @@ mainContainer.addEventListener('click', function (event) {
     calculateTotal();
   }
 
-  // REJECTED
+  // Rejected
   if (event.target.classList.contains('reject-btn')) {
     const post = event.target.closest('.job-post');
 
@@ -136,7 +136,7 @@ mainContainer.addEventListener('click', function (event) {
     calculateTotal();
   }
 
-  // DELETE
+  // Delete
   if (event.target.closest('.delete-btn')) {
     const post = event.target.closest('.job-post');
     const companyName = post.querySelector('.company').innerText;
