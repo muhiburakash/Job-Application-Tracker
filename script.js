@@ -175,7 +175,7 @@ function renderInterview() {
 
   interviewList.forEach(job => {
     const div = document.createElement('div');
-    div.className = 'job-post p-8 bg-white rounded-md space-y-2 relative';
+    div.className = 'job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg';
     div.innerHTML = `
       <h2 class="company text-3xl font-bold">${job.companyName}</h2>
       <p class="job-title text-xl">${job.jobTitle}</p>
@@ -205,7 +205,7 @@ function renderRejected() {
 
   rejectedList.forEach(job => {
     const div = document.createElement('div');
-    div.className = 'job-post p-8 bg-white rounded-md space-y-2 relative';
+    div.className = 'job-post p-8 bg-white rounded-md space-y-2 relative hover:shadow-lg';
     div.innerHTML = `
       <h2 class="company text-3xl font-bold">${job.companyName}</h2>
       <p class="job-title text-xl">${job.jobTitle}</p>
