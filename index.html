@@ -58,7 +58,10 @@
     <section class="my-10">
       <div class="flex justify-between py-5 ">
         <h2 class="text-xl font-semibold">Available Jobs</h2>
-        <p id="tabCount" class="text-[16px] text-gray-500">0 jobs</p>
+        <div class="flex justify-end gap-1">
+          <p id="tabCount" class="text-[16px] text-gray-500">0</p>
+          <p class="text-[16px] text-gray-500">jobs</p>
+        </div>
       </div>
       <!-- tab buttons -->
       <div class="flex gap-4 mb-6">
@@ -69,8 +72,17 @@
         <button onclick="toggleStyle('rejectedBtn')" id="rejectedBtn"
           class="px-4 py-2 bg-gray-300 rounded">Rejected</button>
       </div>
-      <section id="filter-section" class="hidden">
+      <!-- filter tab content -->
+      <section id="filter-section" class="hidden space-y-6 mb-10">
 
+      </section>
+      <!-- Empty State -->
+      <section id="emptyState" class="hidden text-center py-20 mx-auto bg-white rounded-md">
+        <div class="flex justify-center">
+          <img src="asset/jobs.png" alt="" width="50px">
+        </div>
+        <h2 class="text-xl font-semibold">No Jobs Available</h2>
+        <p class="text-gray-500">Try switching tabs</p>
       </section>
       <!-- Job post -->
       <section id="allJobPosts" class="space-y-6 mb-10">
@@ -215,7 +227,6 @@
 
       </section>
     </section>
-
   </main>
 
   <script src="script.js"></script>
